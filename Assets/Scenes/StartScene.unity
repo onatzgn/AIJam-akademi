@@ -500,6 +500,9 @@ MonoBehaviour:
   TextParent: {fileID: 1383102013}
   AITextPrefab: {fileID: -5689305833408195020, guid: 1928429615a381e47a4a9d37f8754ff6, type: 3}
   PlayerTextPrefab: {fileID: 436186388103054625, guid: d3696943f05b5bb418ce07a69b633bfb, type: 3}
+  steps: 0
+  spawnedTexts: []
+  inputField: {fileID: 1809789}
 --- !u!4 &519203057
 Transform:
   m_ObjectHideFlags: 0

@@ -24,6 +24,8 @@ public class AITest : MonoBehaviour
 
     IChatModel model;
 
+    int count = 0;
+
     private async Task Init()
     {
         model = new ChatGeminiAIModel("AIzaSyAXgtGu_qviVlBQcdc11arAutlP4eOLJV8", new ChatGeminiAIRequest { Model = "gemini-1.5-flash-latest", Temperature = 0.5f }, verbose: new(true));
@@ -56,6 +58,12 @@ public class AITest : MonoBehaviour
 
     public async void AutoConversation(string prompt)
     {
+        if (count > 2)
+        {
+            OSManager.instance.steps++;
+            return;
+        }
+
         userPrompt = await model.CallAsync("[Don't use prefix, be yourself. Don't be obsessive, be natural, Answer in Turkish and give short answers!] " + prompt);
         await Task.Delay(1000);
         await ConversationLoop();
@@ -67,6 +75,8 @@ public class AITest : MonoBehaviour
         .SaveMemory();
         result = await pipeline.RunAsync();
         OSManager.instance.InstantiateAIText(result.ToLower());
+        OSManager.instance.steps++;
+        count++;
         // debug
         messages = pipeline.GetMessages();
     }
