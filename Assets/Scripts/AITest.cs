@@ -5,17 +5,17 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using NaughtyAttributes;
+using Aeterponis;
 
 public class AITest : MonoBehaviour
 {
     public bool newChat = true;
-    public string systemPromptTemplate = "Your name is {npc_name}. You are my best friend. And I am {user_name}.";
-    public List<FormatPromptValue> systemPromptFormat = new() { new("npc_name", "Jessica"), new("user_name", "John") };
+    public string systemPromptTemplate = "Senin ismin {npc_name}. Benim en iyi arkadaþým olduðun bir rol yapýyorsun. Rolden çýkma.Cevap verirken 60 karakteri aþma!. Benim adým {user_name}.";
+    public List<FormatPromptValue> systemPromptFormat = new() { new("npc_name", "Jessica"), new("user_name", "User") };
     [Space]
     public string userPrefix = "John";
     public string aiPrefix = "Jessica";
     public string userPrompt = "What's my name?";
-    public string userPrompt2 = "What's my name?";
     [Space]
     public List<Message> messages = new();
     [TextArea(3, 10)]
@@ -26,7 +26,7 @@ public class AITest : MonoBehaviour
 
     private async Task Init()
     {
-        model = new ChatGeminiAIModel("AIzaSyAXgtGu_qviVlBQcdc11arAutlP4eOLJV8", new ChatGeminiAIRequest { Model = "gemini-1.0-pro", Temperature = 0.5f }, verbose: new(true));
+        model = new ChatGeminiAIModel("AIzaSyAXgtGu_qviVlBQcdc11arAutlP4eOLJV8", new ChatGeminiAIRequest { Model = "gemini-1.5-flash-latest", Temperature = 0.5f }, verbose: new(true));
 
         var memory = new SummaryMemory((model, (userPrefix, aiPrefix), 200), "history");
 
@@ -35,12 +35,15 @@ public class AITest : MonoBehaviour
         if (newChat)
         {
             pipeline.AddSystemMessage(systemPromptTemplate, systemPromptFormat)
-                .AddUserMessage(userPrompt)
+                .AddUserMessage("Merhaba Jessica")
                 .SaveMemory();
+
+            OSManager.instance.InstantiateUserText("Merhaba Jessica");
         }
         else pipeline.LoadMemory().AddUserMessage(userPrompt);
 
         result = await pipeline.RunAsync();
+        OSManager.instance.InstantiateAIText(result.ToLower());
 
         messages = pipeline.GetMessages();
     }
@@ -53,7 +56,7 @@ public class AITest : MonoBehaviour
 
     public async void AutoConversation(string prompt)
     {
-        userPrompt = await model.CallAsync("[Don't use prefix, be yourself. Don't be obsessive, be natural.] " + prompt);
+        userPrompt = await model.CallAsync("[Don't use prefix, be yourself. Don't be obsessive, be natural, Answer in Turkish and give short answers!] " + prompt);
         await Task.Delay(1000);
         await ConversationLoop();
     }
@@ -63,6 +66,7 @@ public class AITest : MonoBehaviour
         pipeline.AddUserMessage(userPrompt)
         .SaveMemory();
         result = await pipeline.RunAsync();
+        OSManager.instance.InstantiateAIText(result.ToLower());
         // debug
         messages = pipeline.GetMessages();
     }

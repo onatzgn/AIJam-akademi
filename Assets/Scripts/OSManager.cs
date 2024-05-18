@@ -24,12 +24,14 @@ namespace Aeterponis
         {
             var text = Instantiate(AITextPrefab, Vector3.zero, Quaternion.identity);
             text.InitText(t, false);
+            text.transform.parent = TextParent;
         }
 
         public void InstantiateUserText(string t)
         {
-            var text = Instantiate(AITextPrefab, Vector3.zero, Quaternion.identity);
-            text.InitText(t, false);
+            var text = Instantiate(PlayerTextPrefab, Vector3.zero, Quaternion.identity);
+            text.InitText(t, true);
+            text.transform.parent = TextParent;
         }
     }
 }

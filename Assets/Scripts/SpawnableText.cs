@@ -10,8 +10,8 @@ namespace Aeterponis
     {
         public TextMeshProUGUI _textBox;
         string currentText;
-        const string aiStart = "C:/RIDDLER>";
-        const string userStart = "C:/USER>";
+        const string aiStart = "JESSICA>";
+        const string userStart = "USER>";
         [SerializeField] private float textSpeed = .125f;
 
         public void InitText(string message, bool isPlayer)
@@ -25,14 +25,6 @@ namespace Aeterponis
                 StartCoroutine(PlayText());
             }
         }
-
-        //private void Awake()
-        //{
-        //    currentText = "LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM ";
-        //    _textBox.text = aiStart;
-        //    StartCoroutine(PlayText());
-        //}
-
         IEnumerator PlayText()
         {
             foreach (char c in currentText)
