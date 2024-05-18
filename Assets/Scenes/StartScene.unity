@@ -1713,6 +1713,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640300424}
   m_CullTransparentMesh: 1
+--- !u!1 &1647837311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647837313}
+  - component: {fileID: 1647837312}
+  m_Layer: 0
+  m_Name: Gemini
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1647837312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647837311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 950b341de1c0cda41900d4433891a8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newChat: 1
+  systemPromptTemplate: "Senin ismin {npc_name}. Bana bilmeceler soruyorsun. Ve benim
+    ad\u0131m {user_name}."
+  systemPromptFormat:
+  - key: npc_name
+    value: Jessica
+  - key: user_name
+    value: John
+  userPrefix: User
+  aiPrefix: Riddler
+  userPrompt: "Merhabalar nas\u0131ls\u0131n"
+  messages: []
+  result: 
+--- !u!4 &1647837313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647837311}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1737131361 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3173907175412500883, guid: 1928429615a381e47a4a9d37f8754ff6, type: 3}
@@ -2551,3 +2608,4 @@ SceneRoots:
   - {fileID: 1808001169}
   - {fileID: 1849713924}
   - {fileID: 519203057}
+  - {fileID: 1647837313}
