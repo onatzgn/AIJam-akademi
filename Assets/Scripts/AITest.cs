@@ -15,6 +15,7 @@ public class AITest : MonoBehaviour
     public string userPrefix = "John";
     public string aiPrefix = "Jessica";
     public string userPrompt = "What's my name?";
+    public string userPrompt2 = "What's my name?";
     [Space]
     public List<Message> messages = new();
     [TextArea(3, 10)]

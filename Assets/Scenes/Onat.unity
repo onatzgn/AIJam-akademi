@@ -272,7 +272,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Burak
+  m_text: yakuppp
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c0e1c5879be0da44fb50233b824a4bc7, type: 2}
   m_sharedMaterial: {fileID: -6573010836459179341, guid: c0e1c5879be0da44fb50233b824a4bc7, type: 2}
