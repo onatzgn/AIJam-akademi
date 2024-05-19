@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using NaughtyAttributes;
 using Aeterponis;
+using Unity.VisualScripting;
 
 public class AITest : MonoBehaviour
 {
@@ -45,7 +46,7 @@ public class AITest : MonoBehaviour
         else pipeline.LoadMemory().AddUserMessage(userPrompt);
 
         result = await pipeline.RunAsync();
-        OSManager.instance.InstantiateAIText(result.ToLower());
+        OSManager.instance.InstantiateAIText(result.ToLower(),true);
 
         messages = pipeline.GetMessages();
     }

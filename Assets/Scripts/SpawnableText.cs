@@ -25,6 +25,19 @@ namespace Aeterponis
                 StartCoroutine(PlayText());
             }
         }
+
+        public void InitText(string message, bool isPlayer,bool b)
+        {
+            if (isPlayer)
+                _textBox.text = userStart + message;
+            else
+            {
+                _textBox.text = aiStart + message;
+                currentText = message;
+            }
+        }
+
+
         IEnumerator PlayText()
         {
             foreach (char c in currentText)
@@ -32,6 +45,18 @@ namespace Aeterponis
                 _textBox.text += c;
                 yield return new WaitForSeconds(textSpeed);
             }
+
+            ResizeToFitText();
+        }
+
+
+        private void ResizeToFitText()
+        {
+            _textBox.ForceMeshUpdate();
+            Vector2 textSize = _textBox.GetPreferredValues();
+
+            RectTransform rectTransform = _textBox.GetComponent<RectTransform>();
+            rectTransform.sizeDelta += new Vector2(0, textSize.y);
         }
 
     }
