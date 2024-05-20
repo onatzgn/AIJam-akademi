@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public Text timerText;
 
     private int[] randomNumbers;
-    private float timer = 50f;
+    private float timer = 50f;//süre
 
     void Start()
     {
@@ -23,13 +23,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         timer -= Time.deltaTime;
-        timerText.text = "sure: " + Mathf.Ceil(timer).ToString();
+        timerText.text = "süre: " + Mathf.Ceil(timer).ToString();
 
         if (timer <= 0)
         {
             timer = 0;
             checkButton.interactable = false;
-            resultText.text = "zaman doldu tekrar dene";
+            resultText.text = "süre doldu tekrar dene";
         }
     }
 
@@ -38,14 +38,14 @@ public class GameManager : MonoBehaviour
         randomNumbers = new int[5];
         for (int i = 0; i < randomNumbers.Length; i++)
         {
-            randomNumbers[i] = Random.Range(1, 33);
+            randomNumbers[i] = Random.Range(1, 32); // 1 den 31 e kadar random
             randomNumbersTexts[i].text = randomNumbers[i].ToString();
         }
     }
 
     void CheckOrder()
     {
-        int[] userOrder = new int[5];
+        int[] userOrder = new int[5]; 
         for (int i = 0; i < inputFields.Length; i++)
         {
             if (int.TryParse(inputFields[i].text, out int value))
@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
         if (userOrder.SequenceEqual(correctOrder))
         {
             resultText.text = "Doğru sıraladın sıradaki asamaya geç";
-            SceneManager.LoadScene("NextSceneName");
+            //SceneManager.LoadScene("NextSceneName");
         }
         else
         {
