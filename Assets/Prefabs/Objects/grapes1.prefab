@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 1859339506621488714}
   - component: {fileID: 245118677301277377}
   - component: {fileID: 2051858465502270444}
-  - component: {fileID: 55746017751657302}
-  - component: {fileID: 6935918999388487939}
-  - component: {fileID: 5006904097089694493}
   m_Layer: 0
   m_Name: grapes1
   m_TagString: FallingObject
@@ -78,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5000
   m_Sprite: {fileID: 21300000, guid: dc278087418e64fca83b3d94ad1973ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -165,55 +162,3 @@ CapsuleCollider2D:
   m_Offset: {x: -0.17094225, y: 0.00003054738}
   m_Size: {x: 2.901762, y: 2.901762}
   m_Direction: 0
---- !u!114 &55746017751657302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929925819430211485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1fa8b2f92d697469e162a140259b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 2623788730881713528}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnObject: []
-  spawnTime: 1
-  maxObjects: 10
---- !u!114 &6935918999388487939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929925819430211485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c4f68e49151b0459715588bda2a8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallSpeed: 5
---- !u!114 &5006904097089694493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4929925819430211485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d4afda8346c7c47940f7c82b9e942b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors: []

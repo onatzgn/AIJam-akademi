@@ -12,6 +12,8 @@ public class StateManager : MonoBehaviour
     public GameObject gemini2;
     public GameObject geminiFinal;
 
+    public GameObject[] pps;
+
     int game1 = 0;
     int game1_score = 0;
     int game2 = 0;
@@ -51,6 +53,7 @@ public class StateManager : MonoBehaviour
         {
             gemini1.SetActive(true);
             chatWindow.currentAI = gemini1.GetComponent<AITest>();
+            pps[0].SetActive(true);
 
             OSManager.instance.state = GameStates.after1;
 
@@ -59,6 +62,9 @@ public class StateManager : MonoBehaviour
         {
             gemini2.SetActive(true);
             chatWindow.currentAI = gemini2.GetComponent<AITest>();
+            pps[0].SetActive(true);
+            pps[1].SetActive(true);
+
 
             OSManager.instance.state = GameStates.after2;
 
@@ -67,6 +73,12 @@ public class StateManager : MonoBehaviour
         {
             geminiFinal.SetActive(true);
             chatWindow.currentAI = geminiFinal.GetComponent<AITest>();
+            pps[0].SetActive(true);
+
+            pps[1].SetActive(true);
+
+            pps[2].SetActive(true);
+
             OSManager.instance.state = GameStates.final;
 
         }

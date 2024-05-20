@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 5778393098155741411}
   - component: {fileID: 4279104845008201321}
   - component: {fileID: 357379020819546470}
-  - component: {fileID: 6526634065653766287}
-  - component: {fileID: 5714787718082609880}
-  - component: {fileID: 9214168796320773927}
   m_Layer: 0
   m_Name: bananas
   m_TagString: FallingObject
@@ -78,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5000
   m_Sprite: {fileID: 21300000, guid: 50e0347d981414d189ff77217bc6e69c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -165,55 +162,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.00012207031, y: 0}
   m_Size: {x: 2.56, y: 2.56}
   m_Direction: 0
---- !u!114 &6526634065653766287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583802763259641998}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1fa8b2f92d697469e162a140259b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 2128205772353000238}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnObject: []
-  spawnTime: 1
-  maxObjects: 10
---- !u!114 &5714787718082609880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583802763259641998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c4f68e49151b0459715588bda2a8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallSpeed: 5
---- !u!114 &9214168796320773927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4583802763259641998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d4afda8346c7c47940f7c82b9e942b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors: []

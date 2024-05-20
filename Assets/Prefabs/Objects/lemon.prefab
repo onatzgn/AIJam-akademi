@@ -13,9 +13,6 @@ GameObject:
   - component: {fileID: 6621218301912334477}
   - component: {fileID: 2920949595769313569}
   - component: {fileID: 3986760925234116415}
-  - component: {fileID: 3672238213677416924}
-  - component: {fileID: 6462122748584792867}
-  - component: {fileID: 7917407738195992930}
   m_Layer: 0
   m_Name: lemon
   m_TagString: FallingObject
@@ -78,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5000
   m_Sprite: {fileID: 21300000, guid: f6d5f58465fff456eb84bd071b3134b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -165,55 +162,3 @@ CapsuleCollider2D:
   m_Offset: {x: -0.00012207031, y: -0.00012207031}
   m_Size: {x: 2.56, y: 2.56}
   m_Direction: 0
---- !u!114 &3672238213677416924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7028872082345688196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b1fa8b2f92d697469e162a140259b35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 3692534239885157618}
-  - {fileID: 0}
-  spawnObject: []
-  spawnTime: 1
-  maxObjects: 10
---- !u!114 &6462122748584792867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7028872082345688196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37c4f68e49151b0459715588bda2a8f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fallSpeed: 5
---- !u!114 &7917407738195992930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7028872082345688196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23d4afda8346c7c47940f7c82b9e942b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colors: []
