@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Yedekleme.unity
     guid: e4f9778faedf545cdaa549b9f9135c36
+  - enabled: 1
+    path: Assets/Scenes/takvimsiralama.unity
+    guid: f793eb16eceb60948bc0e9b509c7b397
   m_configObjects: {}

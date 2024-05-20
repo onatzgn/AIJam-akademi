@@ -1,73 +1,52 @@
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+namespace oyun3
 {
-    public Text[] randomNumbersTexts;
-    public InputField[] inputFields;
-    public Button checkButton;
-    public Text resultText;
-    public Text timerText;
-
-    private int[] randomNumbers;
-    private float timer = 50f;//süre
-
-    void Start()
+    public class GameManager : MonoBehaviour
     {
-        GenerateRandomNumbers();
-        checkButton.onClick.AddListener(CheckOrder);
-    }
+        public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI timerText;
 
-    void Update()
-    {
-        timer -= Time.deltaTime;
-        timerText.text = "süre: " + Mathf.Ceil(timer).ToString();
+        private int score = 0;
+        private float timer = 30f;
+        private bool isGameActive = true;
 
-        if (timer <= 0)
+        void Start()
         {
-            timer = 0;
-            checkButton.interactable = false;
-            resultText.text = "süre doldu tekrar dene";
+     
+            UpdateTimerText();
         }
-    }
 
-    void GenerateRandomNumbers()
-    {
-        randomNumbers = new int[5];
-        for (int i = 0; i < randomNumbers.Length; i++)
+        void Update()
         {
-            randomNumbers[i] = Random.Range(1, 32); // 1 den 31 e kadar random
-            randomNumbersTexts[i].text = randomNumbers[i].ToString();
-        }
-    }
-
-    void CheckOrder()
-    {
-        int[] userOrder = new int[5]; 
-        for (int i = 0; i < inputFields.Length; i++)
-        {
-            if (int.TryParse(inputFields[i].text, out int value))
-            {
-                userOrder[i] = value;
-            }
-            else
-            {
-                resultText.text = "gecersiz giris lutfen sayi gir";
+            if (!isGameActive)
                 return;
+
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                isGameActive = false;
+                timer = 0;
+                PlayerPrefs.SetInt("game2",1);
+                PlayerPrefs.SetInt("game2_score",score);
+                SceneManager.LoadScene("StartScene");
             }
+
+            UpdateTimerText();
         }
 
-        int[] correctOrder = randomNumbers.OrderByDescending(n => n).ToArray();
-        if (userOrder.SequenceEqual(correctOrder))
+        public void UpdateScoreText(int _skor)
         {
-            resultText.text = "Doğru sıraladın sıradaki asamaya geç";
-            //SceneManager.LoadScene("NextSceneName");
+            score += _skor;
+            scoreText.text = "Score: " + score;
         }
-        else
+
+        void UpdateTimerText()
         {
-            resultText.text = "yanlış sıraladın tekrar dene";
+            timerText.text = "Time: " + Mathf.Round(timer);
         }
     }
 }
