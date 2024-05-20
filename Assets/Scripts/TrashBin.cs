@@ -6,6 +6,7 @@ public class TrashBin : MonoBehaviour
     private int score = 0;
     private float timeElapsed = 0f;
     private bool gameEnded = false;
+    public GameObject kazandinText;
 
     void Update()
     {
@@ -16,7 +17,9 @@ public class TrashBin : MonoBehaviour
             if (score >= scoreLimit)
             {
                 gameEnded = true;
-                Debug.Log("Tüm virüsler " + timeElapsed + " saniyede temizlendi");
+                kazandinText.SetActive(true);
+                PlayerPrefs.SetInt("game1", 1);
+                PlayerPrefs.SetInt("game1_score", score);
             }
         }
     }

@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace oyun3
 {
     public class GameManager : MonoBehaviour
     {
-        public GameObject[] fallingObjects;
-        public Transform[] spawnPoints;
-        public Text scoreText;
-        public Text timerText;
-        public Image[] colorZones;
-        public Color[] colors;
+        public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI timerText;
 
         private int score = 0;
         private float timer = 30f;
@@ -34,7 +30,11 @@ namespace oyun3
             {
                 isGameActive = false;
                 timer = 0;
+                PlayerPrefs.SetInt("game2",1);
+                PlayerPrefs.SetInt("game2_score",score);
+                SceneManager.LoadScene("StartScene");
             }
+
             UpdateTimerText();
         }
 
