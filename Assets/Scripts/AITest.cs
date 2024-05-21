@@ -29,7 +29,7 @@ public class AITest : MonoBehaviour
 
     private async Task Init()
     {
-        model = new ChatGeminiAIModel("AIzaSyAXgtGu_qviVlBQcdc11arAutlP4eOLJV8", new ChatGeminiAIRequest { Model = "gemini-1.5-flash-latest", Temperature = 0.5f }, verbose: new(true));
+        model = new ChatGeminiAIModel("apikey", new ChatGeminiAIRequest { Model = "gemini-1.5-flash-latest", Temperature = 0.5f }, verbose: new(true));
 
         var memory = new SummaryMemory((model, (userPrefix, aiPrefix), 200), "history");
 
